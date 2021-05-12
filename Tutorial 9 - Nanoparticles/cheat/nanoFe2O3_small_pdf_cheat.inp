@@ -1,0 +1,36 @@
+'=== FILE HEADER ===
+r_wp 0 r_exp 0 r_p 0 r_wp_dash 0 r_p_dash 0 r_exp_dash 0 weighted_Durbin_Watson 0 gof 0
+iters 100000 'Maximum number of iterations of refinement
+chi2_convergence_criteria 0.001 'Stop criteria for refinement
+do_errors 'Reports errors for each refined value
+'continue_after_convergence 'Continues refinement even after reaching the stop criteria
+
+'=== PDF FILE ===
+xdd nanoFe2O3_small_pdf.xy
+
+'=== FILE PREPARATION ===
+	pdf_data
+	weighting 1
+	start_X 1
+	dQ_lor_damping(!dQ,0.05962,!lor,0.3141)
+	convolute_alpha(!alpha,0.00415)
+	convolute_Qmax_Sinc(!Qmax,25)
+		
+
+'=== PHASE INFORMATION ===
+	str
+		phase_name "Fe2O3"
+		a @ 8.37     
+		b =Get(a);     
+		c =Get(a);     
+		al 90       
+		be 90       
+		ga 90       
+		volume 586.3763 
+		space_group "Fd3m:2"
+		site Fe1    x 0.5           y 0.5           z 0.5           occ Fe   0.8333  beq_spherical(beqloFe,0.1,beqhiFe,0.2,beqradius,20)
+		site Fe2    x 0.125         y 0.125         z 0.125         occ Fe   1       beq_spherical(beqloFe,0.1,beqhiFe,0.2,beqradius,20)
+		site O      x 0.25          y 0.25          z 0.25          occ O    1       beq_spherical(beqloO ,0.1,beqhiO ,0.2,beqradius,20)	
+		scale @ 1
+		spherical_damping(@,25)
+		

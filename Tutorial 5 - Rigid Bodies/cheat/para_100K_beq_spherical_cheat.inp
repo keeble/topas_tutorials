@@ -1,0 +1,91 @@
+'=== FILE HEADER ===
+r_wp  62.7862287 r_exp  127.611366 r_p -3019.4269 r_wp_dash  62.7862287 r_p_dash  56.8654892 r_exp_dash  127.611366 weighted_Durbin_Watson  0.118158419 gof  0.492011256
+iters 100000 'Maximum number of iterations of refinement
+chi2_convergence_criteria 0.001 'Stop criteria for refinement
+'do_errors 'Reports errors for each refined value
+continue_after_convergence 'Continues refinement even after reaching the stop criteria
+
+
+'=== PDF FILE ===
+xdd para_100K_pdf.xy
+
+'=== FILE PREPARATION ===
+	pdf_data
+	weighting 1
+	dQ_damping( , 0.08)
+
+
+'=== PHASE INFORMATION ===
+	str
+		a @  12.764606`
+		b @  9.269754`
+		c @  7.111942`
+		al 90       
+		be @  115.60480`
+		ga 90       
+		space_group "P21/a"
+		site C1     x  0.12833`     y  0.17213`     z -0.01296`     occ C    1.0   	beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloC ,0.2, beqhiC, 0.5,beqradius, 10)
+		site C2     x  0.05408`     y  0.17070`     z  0.08716`     occ C    1.0   	beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloC ,0.2, beqhiC, 0.5,beqradius, 10)
+		site C3     x -0.04270`     y  0.26381`     z  0.01880`     occ C    1.0   	beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloC ,0.2, beqhiC, 0.5,beqradius, 10)
+		site C4     x -0.06525`     y  0.35835`     z -0.14968`     occ C    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloC ,0.2, beqhiC, 0.5,beqradius, 10)
+		site C5     x  0.00900`     y  0.35978`     z -0.24980`     occ C    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloC ,0.2, beqhiC, 0.5,beqradius, 10)
+		site C6     x  0.10579`     y  0.26667`     z -0.18144`     occ C    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloC ,0.2, beqhiC, 0.5,beqradius, 10)
+		site C7     x -0.22044`     y  0.51674`     z -0.39421`     occ C    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloC ,0.2, beqhiC, 0.5,beqradius, 10)
+		site C8     x -0.31474`     y  0.60419`     z -0.41233`     occ C    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloC ,0.2, beqhiC, 0.5,beqradius, 10)
+		site N1     x -0.15746`     y  0.44706`     z -0.21481`     occ N    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloN ,0.2, beqhiN, 0.5,beqradius, 10)
+		site O1     x  0.21960`     y  0.08433`     z  0.05150`     occ O    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloO ,0.2, beqhiO, 0.5,beqradius, 10)
+		site O2     x -0.19386`     y  0.50324`     z -0.55470`     occ O    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloO ,0.2, beqhiO, 0.5,beqradius, 10)
+		site H1     x  0.24666`     y  0.03690`     z  0.18682`     occ H    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloH ,0.2, beqhiH, 0.5,beqradius, 10)
+		site H2     x  0.06968`     y  0.10529`     z  0.20372`     occ H    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloH ,0.2, beqhiH, 0.5,beqradius, 10)
+		site H3     x -0.09407`     y  0.26282`     z  0.08806`     occ H    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloH ,0.2, beqhiH, 0.5,beqradius, 10)
+		site H5     x -0.00660`     y  0.42519`     z -0.36636`     occ H    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloH ,0.2, beqhiH, 0.5,beqradius, 10)
+		site H6     x  0.15715`     y  0.26766`     z -0.25070`     occ H    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloH ,0.2, beqhiH, 0.5,beqradius, 10)
+		site H7     x -0.18586`     y  0.46784`     z -0.13780`     occ H    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloH ,0.2, beqhiH, 0.5,beqradius, 10)
+		site H8     x -0.30047`     y  0.70350`     z -0.44035`     occ H    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloH ,0.2, beqhiH, 0.5,beqradius, 10)
+		site H9     x -0.38578`     y  0.56909`     z -0.52663`     occ H    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloH ,0.2, beqhiH, 0.5,beqradius, 10)
+		site H10    x -0.32330`     y  0.60055`     z -0.28258`     occ H    1.0      beq_rcut_rlo_spherical(!rcut,1.0,beqcut, 0.1,!rlo,1.7, beqloH ,0.2, beqhiH, 0.5,beqradius, 10)
+		site X1 x  0.08041` y  0.34096` z  0.01802` occ H 0                                                                                            
+		site X2 x  0.03154` y  0.26524` z -0.08132` occ H 0
+		site X3 x  0.17720` y  0.24785` z  0.08638` occ H 0
+
+		
+		
+'=== RIGID BODY INFORMATION ===
+	rigid     
+		prm rCC  1.41017` min 1.1 max 1.5
+		prm rCO  1.32974` min 1.0 max 1.4
+		prm rCN  1.34345` min 1.1 max 1.5
+		prm rCH  0.97561` min 0.8 max 1.1
+		prm rOH  0.97540` min 0.8 max 1.1
+		prm rNH  0.80005` min 0.8 max 1.1
+		prm dCOH  74.76822` min 0 max 180
+		prm dCNC  111.95886` min 0 max 360  
+		prm dCH3  118.76381` min 0 max 360 
+		prm aCNC  134.20576` min 0 max 360
+	   z_matrix X1
+	   z_matrix X2  X1 1
+	   z_matrix C1  X2 =rCC; X1 90
+	   z_matrix C2  X2 =rCC; X1 90    C1  60
+	   z_matrix C3  X2 =rCC; X1 90    C1 120
+	   z_matrix C4  X2 =rCC; X1 90    C1 180
+	   z_matrix C5  X2 =rCC; X1 90    C1 240
+	   z_matrix C6  X2 =rCC; X1 90    C1 300
+	   z_matrix X3  C1 1     X2 90    X1   0
+	   z_matrix O1  C1 =rCO; X3 90    X2 180
+	   z_matrix H1  O1 =rOH; C1 120   X1 =dCOH;
+	   z_matrix H2  C2 =rCH; C1 120   X2 180
+	   z_matrix H3  C3 =rCH; C2 120   X2 180
+	   z_matrix N1  C4 =rCN; C3 120   X2 180
+	   z_matrix H5  C5 =rCH; C4 120   X2 180
+	   z_matrix H6  C6 =rCH; C5 120   X2 180
+	   z_matrix H7  N1 =rNH; C4 240   X1 =dCNC;
+	   z_matrix C7  N1 =rCN; C4 =aCNC;   X1 =dCNC;
+	   z_matrix O2  C7 =rCO; N1 240   X2 180
+	   z_matrix C8  C7 =rCC; N1 120   X2 180
+	   z_matrix H8  C8 =rCH; C7 109.5 X2 =dCH3;
+	   z_matrix H9  C8 =rCH; C7 109.5 X2 =dCH3+120;
+	   z_matrix H10 C8 =rCH; C7 109.5 X2 =dCH3+240;
+
+		Translate(@ -0.19109`, @ -0.17911`, @ -0.40560`)
+		Rotate_about_axies(@  115.92432`, @ -23.66473`, @ -37.76473`)
+		view_structure

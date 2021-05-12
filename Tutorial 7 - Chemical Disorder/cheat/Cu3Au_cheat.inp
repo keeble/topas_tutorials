@@ -1,0 +1,35 @@
+'=== FILE HEADER ===
+r_wp  0 r_exp  0 r_p 0 r_wp_dash  0 r_p_dash  0 r_exp_dash  0 weighted_Durbin_Watson  0 gof  0
+iters 100000 'Maximum number of iterations of refinement
+chi2_convergence_criteria 0.001 'Stop criteria for refinement
+do_errors 'Reports errors for each refined value
+'continue_after_convergence 'Continues refinement even after reaching the stop criteria
+
+'=== PDF FILE ===
+xdd Cu3Au_pdf.xy
+
+'=== FILE PREPARATION ===
+	pdf_data
+	dQ_damping(!dQ, 0.055)	
+	start_X 1
+	
+'=== PHASE INFORMATION ===
+	str
+		phase_name "ordered"
+		Cubic(aLP  3.78)      
+		space_group "Pm-3m"
+		site Au     x 0.0      y 0.0      z 0.0      occ Au 1 beq_rcut_rlo_spherical(!rcut,3,beqcut, 0.1,!rlo,4,beqlo, 0.2,beqhi, 1.0,beqradius, 20)  
+		site Cu     x 0.0      y 0.5      z 0.5      occ Cu 1 beq_rcut_rlo_spherical(!rcut,3,beqcut, 0.1,!rlo,4,beqlo, 0.2,beqhi, 1.0,beqradius, 20)
+		scale 1                                                   
+		local_sphere(stlrradius, 10)
+			
+
+'=== PHASE INFORMATION ===
+	str
+		phase_name "disordered"
+		Cubic(aLP  3.78)      
+		space_group "Fm-3m"
+		site Au     x 0.0      y 0.0      z 0.0      occ Au   =1/4;  beq_rcut_rlo_spherical(!rcut,3,beqcut, 0.1,!rlo,4,beqlo, 0.2,beqhi, 1.0,beqradius, 20)  
+		site Cu     x 0.0      y 0.0      z 0.0      occ Cu   =3/4;  beq_rcut_rlo_spherical(!rcut,3,beqcut, 0.1,!rlo,4,beqlo, 0.2,beqhi, 1.0,beqradius, 20)
+		longrange_sphere(stlrradius)
+		

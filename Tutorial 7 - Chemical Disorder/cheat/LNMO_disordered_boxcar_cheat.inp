@@ -1,0 +1,55 @@
+'=== FILE HEADER ===
+r_wp  73.675961 r_exp  9.81159685 r_p -10731.805 r_wp_dash  73.675961 r_p_dash  70.9479438 r_exp_dash  9.81159685 weighted_Durbin_Watson  0.0139846164 gof  7.50906933
+iters 100000 'Maximum number of iterations of refinement
+chi2_convergence_criteria 0.001 'Stop criteria for refinement
+'do_errors 'Reports errors for each refined value
+'continue_after_convergence 'Continues refinement even after reaching the stop criteria
+
+prm !start_X_boxcar  1
+prm !range_X_boxcar  5
+prm !step_X_boxcar   1
+num_runs 90
+
+'=== PDF FILE ===
+xdd "Disordered_LNMO.xye"
+
+'=== FILE PREPARATION ===
+	pdf_data
+	weighting 1
+	neutron_data
+				
+	start_X =start_X_boxcar + Run_Number step_X_boxcar;
+	finish_X =Get(start_X) + range_X_boxcar;
+	prm mid_X = (Get(start_X)+Get(finish_X))/2; 
+			
+	dQ_damping( ,0.03)
+
+'=== PHASE INFORMATION ===
+	str
+		phase_name "Spinel-(Li,Ni,Mn)"
+		a @  8.17
+		b =Get(a);    
+		c =Get(a);    
+		al 90.      
+		be 90.      
+		ga 90.      
+		volume  545.339
+		space_group "P4332"
+		site Li1    x @  0.00900  y =Get(x);      z =Get(x);      	occ 7Li   1.          	beq_spherical(beqloLi, 0.24946`,beqhiLi, 0.65940`,beqradius, 6.04061`)
+		site Ni1    x 0.625       y 0.625         z 0.625         	occ  Ni   =1-occMn;   	beq_spherical(beqloM , 0.04577`,beqhiM , 0.36004`,beqradius, 6.04061`)
+		site Mn1    x 0.625       y 0.625         z 0.625         	occ  Mn   occMn 0.075  	beq_spherical(beqloM , 0.04577`,beqhiM , 0.36004`,beqradius, 6.04061`)
+		site Mn2    x 0.125       y yMn2 0.38000  z =-Get(y)+0.25;  occ  Mn   =1-occMn/3;  	beq_spherical(beqloM , 0.04577`,beqhiM , 0.36004`,beqradius, 6.04061`)
+		site Ni2    x 0.125       y =yMn2;  		z =-Get(y)+0.25;  occ  Ni   =occMn/3;   	beq_spherical(beqloM , 0.04577`,beqhiM , 0.36004`,beqradius, 6.04061`)
+		site O1     x @  0.38450  y =Get(x);      z =Get(x);        occ  O    1.          	beq_spherical(beqloO , 0.15121`,beqhiO , 0.35564`,beqradius, 6.04061`)
+		site O2     x @  0.14700  y @ -0.14200    z @  0.12590     	occ  O    1.          	beq_spherical(beqloO , 0.15121`,beqhiO , 0.35564`,beqradius, 6.04061`)
+		scale @ 1                                                                         
+
+out "boxcar_occMn.xy" append		
+		Out(mid_X, "\n%V")
+		Out(occMn, "\t%V")
+out "boxcar_aLP.xy" append
+		Out(mid_X, "\n%V")
+		Out(Get(a), "\t%V")
+out "boxcar_Rwp.xy" append
+		Out(mid_X, "\n%V")
+		Out(Get(r_wp), "\t%V")
